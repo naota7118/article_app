@@ -1,0 +1,7 @@
+.user_admin {
+  color: #fff;
+}
+
+.user_admin:hover {
+  border-bottom: 1px solid #fff;
+}
