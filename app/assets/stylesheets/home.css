@@ -1,0 +1,14 @@
+.user_admin {
+  color: #fff;
+}
+
+.user_admin:hover {
+  border-bottom: 1px solid #fff;
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+}
