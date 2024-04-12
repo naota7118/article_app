@@ -7,5 +7,10 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
-  has_many :articles
+  has_many :articles, dependent: :destroy
+
+
+  def feed
+    Article.where("user_id = ?", id)
+  end
 end

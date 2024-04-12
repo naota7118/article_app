@@ -3,11 +3,11 @@
     <div class="container">
       <h1 class="logo-font">conduit</h1>
       <p>A place to share your knowledge.</p>
-      <a href="/users/new" class="user_admin">ユーザー登録する</a>
     </div>
   </div>
 
   <div class="container page">
+    <%= render 'shared/feed' %>
     <div class="row">
       <div class="col-md-9">
         <div class="feed-toggle">
@@ -20,7 +20,6 @@
             </li>
           </ul>
         </div>
-
         <div class="article-preview">
           <div class="article-meta">
             <a href="/profile/eric-simons"><img src="http://i.imgur.com/Qr71crq.jpg" /></a>

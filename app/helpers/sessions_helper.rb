@@ -27,4 +27,9 @@ module SessionsHelper
     @current_user = nil   # 安全のため
   end
 
+  # ログイン中のユーザーか判別
+  def current_user?(user)
+    user == current_user
+  end
+
 end
