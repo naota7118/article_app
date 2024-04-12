@@ -1,0 +1,7 @@
+<% if @feed_items&.any? %>
+  <ol class="articles">
+    <%= render @feed_items %>
+  </ol>
+<% else %>
+  <p>まだ投稿された記事がありません。</p>
+<% end %>

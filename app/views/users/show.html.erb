@@ -1,2 +1,6 @@
 <%= @user.name %>, <%= @user.email %>
+<% if @user.articles.any? %>
+  <%= render @articles %>
+<% end %>
 <a href="/">ホームに戻る</a>
+<%= link_to "記事を作成する", "articles/new", class: "btn btn-lg btn-primary" %>
