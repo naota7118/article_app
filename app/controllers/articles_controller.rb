@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
       @article = current_user.articles.build
       @feed_items = current_user.feed
     end
+    @articles = Article.all
   end
 
   def new

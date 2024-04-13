@@ -7,20 +7,31 @@
   </div>
 
   <div class="container page">
-    <%= render 'shared/feed' %>
     <div class="row">
       <div class="col-md-9">
         <div class="feed-toggle">
           <ul class="nav nav-pills outline-active">
             <li class="nav-item">
-              <a class="nav-link" href="">Your Feed</a>
+              <a class="nav-link" href="#" id="yourfeed">Your Feed</a>
+                <%# <div class="your-feed"> %>
+                  <%# <%= render 'shared/feed' %> 
+                <%# </div> %>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="">Global Feed</a>
+              <a class="nav-link active" href="" id="globalfeed">Global Feed</a>
+                <%# <div class="global-feed">
+                  <%= render 'shared/global-feed' %>
+                <%# </div> %> 
             </li>
           </ul>
         </div>
-        <div class="article-preview">
+        <div class="your-feed">
+          <%= render 'shared/feed' %>
+        </div>
+        <div class="global-feed show">
+          <%= render 'shared/global-feed' %>
+        </div>
+        <%# <div class="article-preview">
           <div class="article-meta">
             <a href="/profile/eric-simons"><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
             <div class="info">
@@ -62,7 +73,7 @@
               <li class="tag-default tag-pill tag-outline">implementations</li>
             </ul>
           </a>
-        </div>
+        </div> %>
 
         <ul class="pagination">
           <li class="page-item active">

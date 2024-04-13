@@ -12,3 +12,19 @@
   width: 100%;
   margin-top: 45px;
 }
+
+.your-feed {
+  display: none;
+}
+
+.your-feed.show {
+  display: block;
+}
+
+.global-feed {
+  display: none;
+}
+
+.global-feed.show {
+  display: block;
+}
