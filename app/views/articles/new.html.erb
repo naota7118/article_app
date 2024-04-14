@@ -2,10 +2,6 @@
   <div class="container page">
     <div class="row">
       <div class="col-md-10 offset-md-1 col-xs-12">
-        <ul class="error-messages">
-          <li>That title is required</li>
-        </ul>
-        <%# ログインしていたらユーザー名を表示 %>
         <% if logged_in? %>
           <a>ログイン中のユーザー：</a><%= current_user.name %>
         <% else %>
@@ -15,7 +11,8 @@
           <%= link_to "Log in now!", login_path, class: "btn btn-lg btn-primary" %>
         <% end %>
         <%= form_with(model: @article) do |f| %>
-          <%# <%= render 'shared/error_messages', object: f.object  %>
+          <%= render 'shared/error_messages', object: f.object %>
+          <%# <%= render 'shared/article_error_messages' %>  
           <div class="form-group">
             <%= f.text_field :title, placeholder: "Article Title", class: "form-control form-control-lg" %>
           </div>
