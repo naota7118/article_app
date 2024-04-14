@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
 
   def index
     if logged_in?
+      @current_user = current_user
       @article = current_user.articles.build
       @feed_items = current_user.feed.order(created_at: :desc).paginate(page: params[:page], per_page: 3)
     end

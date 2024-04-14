@@ -4,7 +4,18 @@
       <h1 class="logo-font">conduit</h1>
       <p>A place to share your knowledge.</p>
     </div>
-    <%= link_to "記事を作成する", "/articles/new", class: "btn btn-lg btn-primary mkarticle" %>
+    <div class="link-btn">
+      <%# ログインしている場合 %>
+      <% if !@current_user.nil? %>
+        <%= link_to "記事を作成する", "/articles/new", class: "btn btn-lg btn-primary mkarticle" %>
+        <%= link_to "ログアウトする", logout_path, class: "btn btn-lg btn-primary mkarticle", data: { "turbo-method": :delete } %>
+      <% else %>
+        <p>未登録の場合</p>
+        <%= link_to "ユーザー登録する", "/signup", class: "btn btn-lg btn-primary to-signup" %>
+        <p>ログインしてない場合</p>
+        <%= link_to "ログインする", "/login", class: "btn btn-lg btn-primary to-signup" %>
+      <% end %>
+    </div>
   </div>
 
   <div class="container page">
@@ -29,14 +40,6 @@
           <%= render 'shared/global-feed' %>
         </div>
 
-        <%# <ul class="pagination">
-          <li class="page-item active">
-            <a class="page-link" href="">1</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="">2</a>
-          </li>
-        </ul> %>
       </div>
 
       <div class="col-md-3">
