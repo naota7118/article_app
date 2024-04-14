@@ -8,7 +8,6 @@ class ArticlesController < ApplicationController
       @feed_items = current_user.feed
     end
     @articles = Article.all
-    # @tags = Article.tags
   end
 
   def new
@@ -21,7 +20,7 @@ class ArticlesController < ApplicationController
       flash[:success] = "Article created!"
       redirect_to root_url
     else
-      render 'articles/index', status: :unprocessable_entity
+      render 'new', status: :unprocessable_entity
     end
   end
 

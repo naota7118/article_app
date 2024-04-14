@@ -4,6 +4,7 @@
       <h1 class="logo-font">conduit</h1>
       <p>A place to share your knowledge.</p>
     </div>
+    <%= link_to "記事を作成する", "/articles/new", class: "btn btn-lg btn-primary mkarticle" %>
   </div>
 
   <div class="container page">
@@ -41,8 +42,10 @@
           <p>Popular Tags</p>
 
           <div class="tag-list">
-            <% @articles.each do |article| %>
-              <a href="" class="tag-pill tag-default"><%= article.tag %></a>
+            <% if !@articles.nil? %>
+              <% @articles.each do |article| %>
+                <a href="" class="tag-pill tag-default"><%= article.tag %></a>
+              <% end %>
             <% end %>
           </div>
         </div>
