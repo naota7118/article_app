@@ -1,14 +1,11 @@
 // yourfeed.js
 // = yourfeed
-console.log("hello");
-
 document.addEventListener('turbo:load', function() {
 
   // yourfeedが押されたとき
   const yourfeed = document.getElementById('yourfeed');
   yourfeed.addEventListener('click', function(e){
     e.preventDefault();
-    console.log('hello');
     // your-feedクラスのdiv要素にもう1つ別のクラスをつける
     const showyourfeed = document.querySelector('.your-feed');
     showyourfeed.classList.add('show');
@@ -21,6 +18,7 @@ document.addEventListener('turbo:load', function() {
     yourfeed.classList.add('active');
     const globalfeed = document.getElementById('globalfeed');
     globalfeed.classList.remove('active');
+
   });
 
 
@@ -28,7 +26,6 @@ document.addEventListener('turbo:load', function() {
   const globalfeed = document.getElementById('globalfeed');
   globalfeed.addEventListener('click', function(e){
     e.preventDefault();
-    console.log('hello');
     // your-feedは非表示にする
     const showyourfeed = document.querySelector('.your-feed');
     showyourfeed.classList.remove('show');

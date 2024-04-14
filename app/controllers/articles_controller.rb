@@ -5,9 +5,9 @@ class ArticlesController < ApplicationController
   def index
     if logged_in?
       @article = current_user.articles.build
-      @feed_items = current_user.feed.paginate(page: params[:page], per_page: 2)
+      @feed_items = current_user.feed.order(created_at: :desc).paginate(page: params[:page], per_page: 3)
     end
-    @articles = Article.paginate(page: params[:page], per_page: 3)
+    @articles = Article.order(created_at: :desc).paginate(page: params[:page], per_page: 3)
   end
 
   def new
