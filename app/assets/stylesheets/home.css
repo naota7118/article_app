@@ -29,11 +29,16 @@
   display: block;
 }
 
-.btn.btn-lg.btn-primary.mkarticle {
-  background-color: darkgoldenrod;
-  margin-left: 80%;
+.link-btn {
+  display: flex;
+  margin-left: 50%;
 }
 
+.btn.btn-lg.btn-primary.mkarticle,
+.btn.btn-lg.btn-primary.to-signup {
+  background-color: darkgoldenrod;
+  margin-right: 10px;
+}
 
 /* ページネーションの表示を変更 */
 ul.pagination {
