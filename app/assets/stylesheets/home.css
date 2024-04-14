@@ -33,3 +33,38 @@
   background-color: darkgoldenrod;
   margin-left: 80%;
 }
+
+
+/* ページネーションの表示を変更 */
+ul.pagination {
+  display: flex;
+  list-style: none;
+}
+
+ul.pagination > li {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+ul.pagination > li > a {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+ul.pagination > li.active {
+  background-color: #5CB85B;
+}
+
+ul.pagination > li.active > a {
+  color: #fff;
+}
+
+ul.pagination > .prev.previous_page {
+  display: none;
+}
+
+ul.pagination > .next.next_page {
+  display: none;
+}

@@ -1,5 +1,5 @@
 <% if @articles&.any? %>
-  <% @articles.reverse_each do |article| %>
+  <% @articles.each do |article| %>
     <div class="article-preview">
       <div class="article-meta">
         <div class="info">
@@ -18,6 +18,7 @@
       </a>
     </div>
   <% end%>
+  <%= will_paginate @articles %> 
 <% else %>
   <p>まだ投稿された記事がありません。</p>
 <% end %>
