@@ -16,7 +16,13 @@ document.addEventListener('turbo:load', function() {
     // Global Feedは見えないようにする
     const showglobalfeed = document.querySelector('.global-feed');
     showglobalfeed.classList.remove('show');
+
+    // タブの色を変える
+    yourfeed.classList.add('active');
+    const globalfeed = document.getElementById('globalfeed');
+    globalfeed.classList.remove('active');
   });
+
 
   // globalfeedが押されたとき
   const globalfeed = document.getElementById('globalfeed');
@@ -31,6 +37,10 @@ document.addEventListener('turbo:load', function() {
     const showglobalfeed = document.querySelector('.global-feed');
     showglobalfeed.classList.add('show');
 
+    // タブの色を変える
+    yourfeed.classList.remove('active');
+    const globalfeed = document.getElementById('globalfeed');
+    globalfeed.classList.add('active');
   });
 
 });

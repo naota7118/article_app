@@ -5,9 +5,9 @@ class ArticlesController < ApplicationController
   def index
     if logged_in?
       @article = current_user.articles.build
-      @feed_items = current_user.feed
+      @feed_items = current_user.feed.paginate(page: params[:page], per_page: 2)
     end
-    @articles = Article.all
+    @articles = Article.paginate(page: params[:page], per_page: 3)
   end
 
   def new
