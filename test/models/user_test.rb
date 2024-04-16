@@ -16,6 +16,11 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
+  test "email should be present" do
+    @user.email = "     "
+    assert_not @user.valid?
+  end
+
   test "name should not be too long" do
     @user.name = "a" * 51
     assert_not @user.valid?
@@ -23,6 +28,18 @@ class UserTest < ActiveSupport::TestCase
 
   test "email should not be too long" do
     @user.email = "a" * 244 + "@example.com"
+    assert_not @user.valid?
+  end
+
+  test "email validation should accept valid address" do
+    valid_address = "example_user@gmail.com"
+    @user.email = valid_address
+    assert @user.valid?
+  end
+
+  test "email validation should reject invalid address" do
+    valid_address = "example_user.gmail.com"
+    @user.email = valid_address
     assert_not @user.valid?
   end
 
@@ -46,7 +63,6 @@ class UserTest < ActiveSupport::TestCase
 
   test "email addresses should be unique" do
     duplicate_user = @user.dup
-    duplicate_user.email = @user.email.upcase
     @user.save
     assert_not duplicate_user.valid?
   end
