@@ -9,8 +9,14 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   has_many :articles, dependent: :destroy
 
-
   def feed
     Article.where("user_id = ?", id)
+  end
+
+  # パスワードを引数に取りハッシュ関数に変換
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+    BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
   end
 end
