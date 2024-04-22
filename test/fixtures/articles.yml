@@ -1,5 +1,31 @@
-# # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+sample1:
+  title: Today's weather
+  junre: dairy
+  content: It is fine today.
+  tag: weather
+  user_id: 721705103
 
+sample2:
+  title: Today's weather
+  junre: dairy
+  content: It is fine today.
+  tag: weather
+  user_id: 721705103
+
+sample3:
+  title: Today's weather
+  junre: dairy
+  content: It is fine today.
+  tag: weather
+  user_id: 721705103
+
+sample4:
+  title: Today's weather
+  junre: dairy
+  content: It is fine today.
+  tag: weather
+  user_id: 721705103
+  
 # one:
 #   title: MyString
 #   junre: MyString
